@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+    <h2>Contact Me</h2>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Write your name here">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="yourname@gmail.com">
+
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4"placeholder="Write something here"></textarea>
+
+       <button type="submit">Send</button>
+    </form>
+    <footer>
+        <p> 2026 Yane. All rights reserved</p>
+    </footer>
+    <nav>
+        <a href="intro.html">Home</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <section>
+        <h2> Phoung Yadane </h2>
+        <p> Welcome to my portfolio website! </p>
+        <img src="profile.jpg" alt="Photo of phoung Yadane" class="profile-img">
+        <button id="toggleVideoBtn">show/hide video</button>
+        <video id="introVideo" controls width="320">
+            <source src="intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p id="status">Click the button to change this text.</p>
+        <button id="changeBtn">Change Text</button>
+        <button id="bgBtn">Toggle Background</button>
+        
+        <ul> 
+           <li> I am a year two student majoring cybersecurity. </li>
+           <li> I am passionate about protecting digital systems. </li>
+           <li> I enjoy learning new programming languages and tools. </li>
+        </ul>
+        <a class = "btn"href = "contact.html"> Contact Me </a>
+        <h3>skills</h3>
+        <button id="toggleSkillsBtn">Show/Hide Skill</button>
+        <table id="skillTable">
+            <tr>
+                <th>skill</th>
+                <th>Level</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Beginner</td>
+            </tr>           
+        </table>
+    </section>
+    <script>
+        document.getElementById("changeBtn").addEventListener("click", function() {
+            document.getElementById("status").textContent = "Text has been changed!";
+        });
+        document.getElementById("toggleVideoBtn").addEventListener("click", function() {
+            var video = document.getElementById("introVideo");
+            if (video.style.display === "none") {
+                video.style.display = "block";
+            } else {
+                video.style.display = "none";
+            }
+           
+        });
+        document.getElementById("bgBtn").addEventListener("click", function() {
+            document.body.classList.toggle("alt-bg");
+        }); 
+        document.getElementById("toggleSkillsBtn").addEventListener("click", function() {
+            var table = document.getElementById("skillTable");
+            table.style.display = (table.style.display == "none") ? "table" : "none";
+        });
+    </script>
+    <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdk7LCmY6jol525EE-ZJDFlSxkvJpFRQ46OL6K7PP5wyNO1EQ/viewform?embedded=true"
+        width="100%"
+        height="700"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading..
+    </iframe>
+</body>
+</html>
